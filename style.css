@@ -27,11 +27,12 @@ header img {
 .home {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
   height: 65vh;
 }
 .home img {
   width: 55%;
-  height: auto;
+  max-height: 75%;
   padding-top: 100px;
 }
 
@@ -40,11 +41,12 @@ main {
   height: 70vh;
   margin-top: -25px;
   text-align: center;
+  border-radius: 3px;
 }
 main h1 {
   font-family: "Lexend Tera", sans-serif;
   font-size: 27px;
-  margin-top: 50px;
+  margin: 50px 0 40px 0;
 }
 main p {
   font-family: "Montserrat", sans-serif;
@@ -71,6 +73,7 @@ nav ul a {
   font-size: 16px;
   background-color: #FABA35;
   color: #ffffff;
+  border-radius: 3px;
 }
 
 /*# sourceMappingURL=style.css.map */
