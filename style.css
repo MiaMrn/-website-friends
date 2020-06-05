@@ -38,17 +38,18 @@ header img {
 
 main {
   background-color: #ffffff;
-  height: 70vh;
   margin-top: -25px;
-  text-align: center;
   border-radius: 3px;
 }
-main h1 {
+main .welcome {
+  text-align: center;
+}
+main .welcome h1 {
   font-family: "Lexend Tera", sans-serif;
   font-size: 27px;
   margin: 50px 0 40px 0;
 }
-main p {
+main .welcome p {
   font-family: "Montserrat", sans-serif;
   font-size: 16px;
 }
@@ -74,6 +75,16 @@ nav ul a {
   background-color: #FABA35;
   color: #ffffff;
   border-radius: 3px;
+}
+
+#seasons .tabs .active {
+  background-color: #9480D3;
+}
+#seasons .tab__content {
+  display: none;
+}
+#seasons .tab__content.active {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
