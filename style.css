@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Lexend+Mega&family=Lexend+Tera&family=Montserrat&display=swap");
 body {
-  background-color: #9480D3;
+  background: radial-gradient(circle, white 0%, #A499D1 98%);
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", sans-serif;
+  line-height: 25px;
 }
 
 .container {
@@ -27,7 +29,7 @@ header img {
 .home {
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   height: 65vh;
 }
 .home img {
@@ -37,8 +39,11 @@ header img {
 }
 
 main {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
   background-color: #ffffff;
-  margin-top: -25px;
+  margin-top: -50px;
   border-radius: 3px;
 }
 main .welcome {
@@ -47,7 +52,7 @@ main .welcome {
 main .welcome h1 {
   font-family: "Lexend Tera", sans-serif;
   font-size: 27px;
-  margin: 50px 0 40px 0;
+  margin: 20px 0 40px 0;
 }
 main .welcome p {
   font-family: "Montserrat", sans-serif;
@@ -60,11 +65,8 @@ nav ul {
   padding: 40px 0;
   margin-top: 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-}
-nav ul li:not(:first-child) {
-  margin-left: 150px;
 }
 nav ul a {
   padding: 10px 20px;
@@ -75,10 +77,38 @@ nav ul a {
   background-color: #FABA35;
   color: #ffffff;
   border-radius: 3px;
+  box-shadow: 0px 10px 29px -9px #757475;
 }
 
+#seasons .tabs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  font-size: 25px;
+  padding-left: 0;
+  margin-bottom: 50px;
+}
+#seasons .tabs li {
+  border-radius: 3px;
+  padding: 10px 25px;
+}
+#seasons .tabs a {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: inherit;
+  height: 100%;
+  width: 100%;
+}
 #seasons .tabs .active {
-  background-color: #9480D3;
+  border: 1px solid #dddddd;
+}
+#seasons .tabs__content {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 35px;
+  border-radius: 3px;
+  border: 1px solid #dddddd;
 }
 #seasons .tab__content {
   display: none;
