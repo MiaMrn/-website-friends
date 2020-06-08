@@ -6,6 +6,11 @@ body {
   font-family: "Montserrat", sans-serif;
   line-height: 25px;
 }
+body h2 {
+  font-family: "Lexend Tera", sans-serif;
+  font-size: 21px;
+  text-align: center;
+}
 
 .container {
   width: 80%;
@@ -39,7 +44,7 @@ header img {
 }
 
 main {
-  width: 70%;
+  width: 90%;
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
@@ -67,6 +72,7 @@ nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  flex-wrap: wrap;
 }
 nav ul a {
   padding: 10px 20px;
@@ -84,6 +90,7 @@ nav ul a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   list-style-type: none;
   font-size: 25px;
   padding-left: 0;
@@ -115,6 +122,110 @@ nav ul a {
 }
 #seasons .tab__content.active {
   display: block;
+}
+
+#characters .firstLine,
+#characters .secondLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#characters .firstLine > div,
+#characters .secondLine > div {
+  height: 300px;
+  width: 33.33%;
+  overflow: hidden;
+  background-size: 100%;
+  background-position: center;
+  position: relative;
+}
+#characters .firstLine > div:hover::after,
+#characters .secondLine > div:hover::after {
+  background-color: transparent;
+}
+#characters .firstLine > div::after,
+#characters .secondLine > div::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+}
+#characters .firstLine > div .buttons,
+#characters .secondLine > div .buttons {
+  display: none;
+}
+#characters .firstLine > div .buttons button,
+#characters .secondLine > div .buttons button {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  background-color: #FABA35;
+  color: #ffffff;
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 10px 29px -9px #757475;
+  cursor: pointer;
+}
+#characters .firstLine > div:hover .buttons,
+#characters .secondLine > div:hover .buttons {
+  display: block;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+#characters .firstLine .rachel,
+#characters .secondLine .rachel {
+  background-image: url("images/rachel.jpg");
+}
+#characters .firstLine .rachel::after,
+#characters .secondLine .rachel::after {
+  background-color: rgba(148, 128, 211, 0.7);
+}
+#characters .firstLine .ross,
+#characters .secondLine .ross {
+  background-image: url("images/ross.jpg");
+}
+#characters .firstLine .ross::after,
+#characters .secondLine .ross::after {
+  background-color: rgba(250, 186, 53, 0.7);
+}
+#characters .firstLine .monica,
+#characters .secondLine .monica {
+  background-image: url("images/monica.jpg");
+}
+#characters .firstLine .monica::after,
+#characters .secondLine .monica::after {
+  background-color: rgba(2, 175, 230, 0.7);
+}
+#characters .firstLine .joey,
+#characters .secondLine .joey {
+  background-image: url("images/joey.jpg");
+}
+#characters .firstLine .joey::after,
+#characters .secondLine .joey::after {
+  background-color: rgba(2, 175, 230, 0.7);
+}
+#characters .firstLine .phoebe,
+#characters .secondLine .phoebe {
+  background-image: url("images/phoebe.jpg");
+}
+#characters .firstLine .phoebe::after,
+#characters .secondLine .phoebe::after {
+  background-color: rgba(234, 55, 42, 0.7);
+}
+#characters .firstLine .chandler,
+#characters .secondLine .chandler {
+  background-image: url("images/chandler.jpg");
+}
+#characters .firstLine .chandler::after,
+#characters .secondLine .chandler::after {
+  background-color: rgba(148, 128, 211, 0.7);
 }
 
 /*# sourceMappingURL=style.css.map */
