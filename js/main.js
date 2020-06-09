@@ -1,5 +1,4 @@
 //------------------------------------------------------Tabs System
-
 const tabs = document.querySelectorAll(".tabs a");
 // Modification des Tabs au click
 tabs.forEach(tab => {
@@ -10,11 +9,11 @@ tabs.forEach(tab => {
 // Modification des Tabs en fonction de l'URL
 let hash = window.location.hash;
 let a = document.querySelector("a[href='" + hash + "']");
-console.log(a);
 if (a && !a.classList.contains("active")) {
     afficherOnglet(a);
-
 }
+
+
 
 
 //------------------------------------------------------Characters gallery
@@ -37,34 +36,37 @@ characters.forEach((character, index) => {
     olderBackground(btnPerso, character, youngPictures[index], oldPictures[index]);
 })
 
+
+
+
+
+//------------------------------------------------------Characters modals
+const btnModal = document.querySelectorAll(".buttons__spoiler");
+
+btnModal.forEach(button => {
+    button.addEventListener("click", openModal);
+})
+
+
+
+
+
+
+
 //------------------------------------------------------Functions
 function afficherOnglet(a) {
     const li = a.parentNode;
     const div = a.parentNode.parentNode.parentNode;
     const actif = div.querySelector(".tabs .active");
-    //const activeTab = div.querySelector(".tab__content.active");
-    //const aAfficher = div.querySelector(a.getAttribute("href"));
-    // On sort de la fonction si l'onglet cliqué est déjà l'onglet actif
+
     if (li.classList.contains("active")) {
         return false;
     }
-    // On retire la class active sur l'onglet qui l'avait
     actif.classList.remove("active");
-    // On ajoute à la class active sur l'onglet cliqué
     li.classList.add("active");
-    // On retire la class active sur le contenu qui l'avait
     div.querySelector(".tab__content.active").classList.remove("active");
-    // On ajoute la class active sur le contenu qui correspond à l'onglet cliqué
     div.querySelector(a.getAttribute("href")).classList.add("active");
-    // activeTab.classList.add("fade");
-    // activeTab.classList.remove("in");
-    // activeTab.addEventListener("transitionend", function () {
-    //     this.classList.remove("fade");
-    //     this.classList.remove("active");
-    //     aAfficher.classList.add("active");
-    //     aAfficher.classList.add("fade");
-    //     aAfficher.classList.add("in");
-    // })
+
 }
 
 /*
@@ -88,4 +90,10 @@ function olderBackground(btn, div, youngImage, oldImage) {
         spoiler.style.display = "block";
         div.style.backgroundImage = `url(${youngImage})`;
     })
+}
+
+function openModal(e) {
+    e.preventDefault;
+    const target = document.querySelector(e.target.getAttribute("href"));
+    console.log(target);
 }
