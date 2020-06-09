@@ -42,20 +42,65 @@ header {
         width: auto;
         padding-top: 20px;
 
-
+        @media screen and (max-width: $small) {
+            height: 40px;
+            width: auto;
+        }
     }
 }
 
 
 //---------------------------------------Home
 .home {
-    @include flexCenter(center);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
     height: 65vh;
+
+    @media screen and (max-width: $large) {
+        height: 40vh;
+    }
+
+    @media screen and (max-width: $medium + 22) {
+        height: 30vh;
+    }
+
+    @media screen and (max-width: $small + 22) {
+        height: 20vh;
+    }
+
+    @media screen and (max-width: $xsmall + 22) {
+        height: 10vh;
+    }
+
+    @media screen and (max-width: 320px) {
+        height: 5vh;
+    }
 
     img {
         width: 55%;
         max-height: 75%;
-        padding-top: 100px;
+        margin-bottom: 0px;
+        //padding-top: 100px;
+        // @media screen and (max-width: $large) {
+        //     max-height: 60%;
+        //     width: auto;
+        // }
+        // @media screen and (max-width: $medium) {
+        //     max-height: 50%;
+        //     width: auto;
+        // }
+        // @media screen and (max-width: $small + 22) {
+        //     max-height: 35%;
+        //     width: auto;
+        // }
+        // @media screen and (max-width: $xsmall + 22) {
+        //     max-height: 25%;
+        //     width: auto;
+        // }
+        // @media screen and (max-width: 320px) {
+        //     display: none;
+        // }
     }
 }
 
@@ -66,7 +111,7 @@ main {
     margin-left: auto;
     margin-right: auto;
     background-color: #ffffff;
-    margin-top: -50px;
+    margin-top: -5px;
     border-radius: 3px;
 
     .welcome {
@@ -75,10 +120,12 @@ main {
         h1 {
             font-family: $titlesFont;
             font-size: 27px;
-            margin: 20px 0 40px 0;
+            margin: 10px 0 40px 0;
+
+            @media screen and (max-width: $medium) {
+                margin-top: 0;
+            }
         }
-
-
 
         p {
             font-family: $contentFont;
@@ -94,7 +141,16 @@ nav {
         padding: 40px 0;
         margin-top: 0;
         @include flexCenter(space-around);
-        flex-wrap: wrap;
+
+        @media screen and (max-width: $small + 50) {
+            flex-direction: column;
+        }
+
+        li:not(:last-child) {
+            @media screen and (max-width: $small + 50) {
+                margin-bottom: 20px;
+            }
+        }
 
         a {
             padding: 10px 20px;
@@ -106,6 +162,10 @@ nav {
             color: #ffffff;
             border-radius: 3px;
             box-shadow: $shadow;
+
+            @media screen and (max-width: $small + 50) {
+                box-shadow: none;
+            }
         }
     }
 }
@@ -115,17 +175,33 @@ nav {
 #seasons {
 
     .tabs {
+        @include flexCenter(center);
+        padding-left: 0;
+
+        @media screen and (max-width: $small + 70) {
+            flex-direction: column;
+        }
+    }
+
+    .oneToFive,
+    .fiveToTen {
         @include flexCenter(space-between);
-        flex-wrap: wrap;
         list-style-type: none;
         font-size: 25px;
         padding-left: 0;
         margin-bottom: 50px;
 
+        @media screen and (max-width: $small + 70) {
+            margin-bottom: 0px;
+        }
+
         li {
-            //background-color: $neutralGrey;
             border-radius: 3px;
             padding: 10px 25px;
+
+            @media screen and (max-width: $mediumPlus) {
+                padding: 5px 15px;
+            }
         }
 
         a {

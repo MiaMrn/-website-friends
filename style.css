@@ -30,17 +30,48 @@ header img {
   width: auto;
   padding-top: 20px;
 }
+@media screen and (max-width: 600px) {
+  header img {
+    height: 40px;
+    width: auto;
+  }
+}
 
 .home {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   height: 65vh;
+}
+@media screen and (max-width: 1280px) {
+  .home {
+    height: 40vh;
+  }
+}
+@media screen and (max-width: 762px) {
+  .home {
+    height: 30vh;
+  }
+}
+@media screen and (max-width: 622px) {
+  .home {
+    height: 20vh;
+  }
+}
+@media screen and (max-width: 502px) {
+  .home {
+    height: 10vh;
+  }
+}
+@media screen and (max-width: 320px) {
+  .home {
+    height: 5vh;
+  }
 }
 .home img {
   width: 55%;
   max-height: 75%;
-  padding-top: 100px;
+  margin-bottom: 0px;
 }
 
 main {
@@ -48,7 +79,7 @@ main {
   margin-left: auto;
   margin-right: auto;
   background-color: #ffffff;
-  margin-top: -50px;
+  margin-top: -5px;
   border-radius: 3px;
 }
 main .welcome {
@@ -57,7 +88,12 @@ main .welcome {
 main .welcome h1 {
   font-family: "Lexend Tera", sans-serif;
   font-size: 27px;
-  margin: 20px 0 40px 0;
+  margin: 10px 0 40px 0;
+}
+@media screen and (max-width: 740px) {
+  main .welcome h1 {
+    margin-top: 0;
+  }
 }
 main .welcome p {
   font-family: "Montserrat", sans-serif;
@@ -72,7 +108,16 @@ nav ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+}
+@media screen and (max-width: 650px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 650px) {
+  nav ul li:not(:last-child) {
+    margin-bottom: 20px;
+  }
 }
 nav ul a {
   padding: 10px 20px;
@@ -85,29 +130,60 @@ nav ul a {
   border-radius: 3px;
   box-shadow: 0px 10px 29px -9px #757475;
 }
+@media screen and (max-width: 650px) {
+  nav ul a {
+    box-shadow: none;
+  }
+}
 
 #seasons .tabs {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0;
+}
+@media screen and (max-width: 670px) {
+  #seasons .tabs {
+    flex-direction: column;
+  }
+}
+#seasons .oneToFive,
+#seasons .fiveToTen {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   list-style-type: none;
   font-size: 25px;
   padding-left: 0;
   margin-bottom: 50px;
 }
-#seasons .tabs li {
+@media screen and (max-width: 670px) {
+  #seasons .oneToFive,
+#seasons .fiveToTen {
+    margin-bottom: 0px;
+  }
+}
+#seasons .oneToFive li,
+#seasons .fiveToTen li {
   border-radius: 3px;
   padding: 10px 25px;
 }
-#seasons .tabs a {
+@media screen and (max-width: 980px) {
+  #seasons .oneToFive li,
+#seasons .fiveToTen li {
+    padding: 5px 15px;
+  }
+}
+#seasons .oneToFive a,
+#seasons .fiveToTen a {
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   color: inherit;
   height: 100%;
   width: 100%;
 }
-#seasons .tabs .active {
+#seasons .oneToFive .active,
+#seasons .fiveToTen .active {
   border: 1px solid #dddddd;
 }
 #seasons .tabs__content {
