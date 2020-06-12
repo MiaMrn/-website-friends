@@ -41,11 +41,40 @@ characters.forEach((character, index) => {
 
 
 //------------------------------------------------------Characters modals
-const btnModal = document.querySelectorAll(".buttons__spoiler");
+const modalOpeners = document.querySelectorAll(".buttons__spoiler");
 
-btnModal.forEach(button => {
+modalOpeners.forEach(button => {
     button.addEventListener("click", openModal);
 })
+
+window.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" || e.key === "Esc") {
+        closeModal(e);
+    }
+})
+
+
+
+
+//------------------------------------------------------Characters modals
+
+class Carousel {
+    /**
+     * @param {HTMLElement} element 
+     * @param {Object} options 
+     * @param {Object} options.slidesToScroll = nb d'element à faire défiler
+     * @param {Object} options.slidesVisibles = nb d'élement visible dans un slide
+     */
+    constructor(element, options = {})
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    new Carousel(document.querySelector(".carousel"), {
+        slidesToScroll: 3,
+        slidesVisibles: 3
+    });
+})
+
 
 
 
@@ -56,9 +85,8 @@ btnModal.forEach(button => {
 //------------------------------------------------------Functions
 function afficherOnglet(a) {
     const li = a.parentNode;
-    const div = a.parentNode.parentNode.parentNode;
+    const div = a.parentNode.parentNode.parentNode.parentNode;
     const actif = div.querySelector(".tabs .active");
-
     if (li.classList.contains("active")) {
         return false;
     }
@@ -93,7 +121,32 @@ function olderBackground(btn, div, youngImage, oldImage) {
 }
 
 function openModal(e) {
-    e.preventDefault;
+    e.preventDefault();
     const target = document.querySelector(e.target.getAttribute("href"));
-    console.log(target);
+    target.style.display = null;
+    target.style.zIndex = 5;
+    modal = target;
+    modal.addEventListener("click", closeModal);
+    modal.querySelector(".js-modal-close").addEventListener("click", closeModal);
+    modal.querySelector(".js-modal-stop").addEventListener("click", stopPropagation);
+}
+
+function closeModal(e) {
+    if (modal === null) return;
+    e.preventDefault();
+    modal.setAttribute('aria-hidden', "true");
+    modal.removeEventListener("click", closeModal);
+    modal.querySelector(".js-modal-close").removeEventListener("click", closeModal);
+    modal.querySelector(".js-modal-stop").removeEventListener("click", stopPropagation);
+
+    function hideModale() {
+        modal.style.display = "none";
+        modal.removeEventListener("animationend", hideModale);
+        modal = null;
+    }
+    modal.addEventListener("animationend", hideModale);
+}
+
+function stopPropagation(e) {
+    e.stopPropagation();
 }
